@@ -13,4 +13,11 @@ def guardar_dado(rolados, guardados, indice):
         if i!=indice:
             saida_rolados.append(rolados[i])
     return [saida_rolados, guardados]
-
+def remover_dado(rolados,estoque,indice):
+    dado_a_ser_removido=estoque[indice]
+    rolados.append(dado_a_ser_removido)
+    saida_estoque=[]
+    for i in range (len(estoque)):
+        if i!=indice:
+            saida_estoque.append(estoque[i])
+    return [rolados, saida_estoque]
