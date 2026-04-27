@@ -21,3 +21,12 @@ def remover_dado(rolados,estoque,indice):
         if i!=indice:
             saida_estoque.append(estoque[i])
     return [rolados, saida_estoque]
+def calcula_pontos_regra_simples(lista_rolados):
+    dic_resposta={}
+    for numero in range (1,7):
+        pontuacao=0
+        for dado in lista_rolados:
+            if dado==numero:
+                pontuacao+=numero
+        dic_resposta[numero]=pontuacao
+    return dic_resposta
