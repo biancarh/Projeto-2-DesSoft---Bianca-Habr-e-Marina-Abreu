@@ -54,3 +54,16 @@ def calcula_pontos_sequencia_baixa(x):
         return 15
     else:
         return 0
+
+def calcula_pontos_sequencia_alta(x):
+    sequencia = 0
+    if 1 in x and 2 in x and 3 in x and 4 in x and 5 in x:
+        sequencia = 1
+    elif 2 in x and 3 in x and 4 in x and 5 in x and 6 in x:
+        sequencia = 1
+    else:
+        sequencia = 0
+    if sequencia == 1:
+        return 30
+    else:
+        return 0
