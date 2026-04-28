@@ -67,3 +67,32 @@ def calcula_pontos_sequencia_alta(x):
         return 30
     else:
         return 0
+
+def calcula_pontos_full_house(x):
+    soma = 0
+    numero1 = x[0]
+    soma_numero1 = 0
+    soma_numero2 = 0
+    lista_numero2 = []
+    for i in x:
+        if i == numero1:
+            soma_numero1 += 1
+        else:
+            lista_numero2.append(i)
+            soma_numero2 += 1
+        soma = soma + i
+
+    if soma_numero2 == 3:
+        if lista_numero2[0] == lista_numero2[1] == lista_numero2[2]:
+            soma_numero2 = 10
+
+    if soma_numero2 == 2 and soma_numero1 == 3:
+        primeiro_elemento_lista_numero2 = lista_numero2[0]
+        segundo_elemento_lista_numero2 = lista_numero2[1]
+        if primeiro_elemento_lista_numero2 == segundo_elemento_lista_numero2:
+            soma_numero2 = 10
+
+    if (soma_numero1 == 3 and soma_numero2 == 10) or (soma_numero1 == 2 and soma_numero2 == 10):
+        return soma
+    else:
+        return 0
