@@ -5,6 +5,7 @@ def rolar_dados(n):
         num_sorteado= random.randint(1,6)
         lista_resposta.append(num_sorteado)
     return lista_resposta
+
 def guardar_dado(rolados, guardados, indice):
     dado_a_ser_guardado= rolados[indice]
     guardados.append(dado_a_ser_guardado)
@@ -13,6 +14,7 @@ def guardar_dado(rolados, guardados, indice):
         if i!=indice:
             saida_rolados.append(rolados[i])
     return [saida_rolados, guardados]
+
 def remover_dado(rolados,estoque,indice):
     dado_a_ser_removido=estoque[indice]
     rolados.append(dado_a_ser_removido)
@@ -21,6 +23,7 @@ def remover_dado(rolados,estoque,indice):
         if i!=indice:
             saida_estoque.append(estoque[i])
     return [rolados, saida_estoque]
+
 def calcula_pontos_regra_simples(lista_rolados):
     dic_resposta={}
     for numero in range (1,7):
@@ -30,3 +33,9 @@ def calcula_pontos_regra_simples(lista_rolados):
                 pontuacao+=numero
         dic_resposta[numero]=pontuacao
     return dic_resposta
+
+def calcula_pontos_soma(x):
+    soma = 0
+    for numero in x:
+        soma += numero
+    return soma
