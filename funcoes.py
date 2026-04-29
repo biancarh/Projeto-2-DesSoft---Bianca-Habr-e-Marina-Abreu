@@ -115,3 +115,19 @@ def calcula_pontos_quadra(lista_dados):
         return soma
     else:
         return 0
+def calcula_pontos_quina(lista_dados):
+    quina=False
+    dic_aux={}
+    for n in lista_dados:
+        if n not in dic_aux:
+            dic_aux[n]=1
+        else:
+            dic_aux[n]+=1
+    for n, quant in dic_aux.items():
+        if quant>=5:
+            quina=True
+    if quina==True:
+        return 50
+    else:
+        return 0
+    
