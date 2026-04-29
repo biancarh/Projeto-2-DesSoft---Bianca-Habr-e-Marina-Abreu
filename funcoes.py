@@ -96,3 +96,22 @@ def calcula_pontos_full_house(x):
         return soma
     else:
         return 0
+def calcula_pontos_quadra(lista_dados):
+    dic_aux={}
+    quadra=False
+    for n in lista_dados:
+        if n not in dic_aux:
+            dic_aux[n]=1
+        else:
+            dic_aux[n]+=1
+    for n, quant in dic_aux.items():
+        if quant>=4:
+            quadra=True
+    #faço a soma
+    soma=0
+    for n in lista_dados:
+        soma+=n
+    if quadra==True:
+        return soma
+    else:
+        return 0
