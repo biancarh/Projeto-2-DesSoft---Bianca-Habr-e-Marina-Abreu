@@ -96,6 +96,7 @@ def calcula_pontos_full_house(x):
         return soma
     else:
         return 0
+    
 def calcula_pontos_quadra(lista_dados):
     dic_aux={}
     quadra=False
@@ -115,6 +116,7 @@ def calcula_pontos_quadra(lista_dados):
         return soma
     else:
         return 0
+    
 def calcula_pontos_quina(lista_dados):
     quina=False
     dic_aux={}
@@ -130,4 +132,15 @@ def calcula_pontos_quina(lista_dados):
         return 50
     else:
         return 0
+
+def calcula_pontos_regra_avancada(lista_dados):
+    dic_resposta={}
     
+    dic_resposta['cinco_iguais']=calcula_pontos_quina(lista_dados)
+    dic_resposta['full_house']=calcula_pontos_full_house(lista_dados)
+    dic_resposta["sem_combinacao"]=calcula_pontos_soma(lista_dados)
+    dic_resposta['quadra']=calcula_pontos_quadra(lista_dados)
+    dic_resposta['sequencia_alta']=calcula_pontos_sequencia_alta(lista_dados)
+    dic_resposta['sequencia_baixa']=calcula_pontos_sequencia_baixa(lista_dados)
+    return dic_resposta
+
