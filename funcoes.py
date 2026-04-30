@@ -135,7 +135,7 @@ def calcula_pontos_quina(lista_dados):
 
 def calcula_pontos_regra_avancada(lista_dados):
     dic_resposta={}
-    
+
     dic_resposta['cinco_iguais']=calcula_pontos_quina(lista_dados)
     dic_resposta['full_house']=calcula_pontos_full_house(lista_dados)
     dic_resposta["sem_combinacao"]=calcula_pontos_soma(lista_dados)
@@ -144,3 +144,13 @@ def calcula_pontos_regra_avancada(lista_dados):
     dic_resposta['sequencia_baixa']=calcula_pontos_sequencia_baixa(lista_dados)
     return dic_resposta
 
+def faz_jogada(lista_dados, categoria, dicio_cartela):
+    if categoria in dicio_cartela["regra_avancada"]:
+        resultado = calcula_pontos_regra_avancada(lista_dados)
+        dicio_cartela["regra_avancada"][categoria] = resultado[categoria]
+    else:
+        categoria = int(categoria)
+        resultado = calcula_pontos_regra_simples(lista_dados)
+        dicio_cartela["regra_simples"][categoria] = resultado[categoria]
+
+    return dicio_cartela
